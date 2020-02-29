@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Home from './Home.jsx'
 
-// stateless and turned to functional component
-const App = () =>  {
+
+class App extends Component {
+
+  render () {
     return (
       <main>
         <Home />
       </main>
     );
-  };
+  }
+}
+
 export default App;
