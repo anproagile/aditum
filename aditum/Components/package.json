@@ -8,9 +8,7 @@
   },
   "scripts": {
     "start": "npx babel ./src --watch --out-dir ./dist",
-    "test": "jest --verbose",
-    "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "babel ./src --out-dir ./dist"
   },
   "repository": {
@@ -38,13 +36,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.6",
-    "@babel/polyfill": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.8.6",
-    "@babel/preset-react": "^7.8.3",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.4.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.4.2"
+    "@babel/preset-react": "^7.8.3"
   }
 }
