@@ -1,15 +1,21 @@
 /**
- * @description accessibility bar component to allow user to jump focus to different components on screen
- * importing an aria-compliant dropdown package
- * able to target focus with the setSelected option in that package
- * *
+ * @description Accessibility bar component to allow user to jump focus to different components on screen. 
+ * One dropdown will focus to elements on screen.
+ * The other will route you to routes in your navigation bar.
+ * 
+ * 
+ * 
+ * 
  */
 
 import React, { useState, useEffect, useRef} from 'react';
 import Dropdown from 'react-dropdown-aria';
+import { useHistory} from 'react-router-dom';
 
-const AccessBar2 = () => {
+const AccessBarWithRouter = () => {
+  const pathname = useHistory().location.pathname;
   const [sectionInfo, setSectionInfo] = useState(null);
+  const [navInfo, setNavInfo] = useState(null);
   const [isHidden, setIsHidden] = useState(true);
 
   // creating the refs to change focus
@@ -26,6 +32,18 @@ const AccessBar2 = () => {
     // can put a .click() after focus to focus with the enter button
     // works, but gives error
     sectionRef.current.focus();
+  };
+
+
+  // Changes the page when selecting a link from the 2nd dropdown
+  const changeView = e => {
+    const currentPath = navInfo[e];
+    const accessLinks = document.querySelectorAll('.accessNavLink');
+    accessLinks.forEach(el => {
+      if (el.pathname === currentPath) {
+        el.click();
+      };
+    });
   };
 
   // event handler to toggle visibility of AccessBar and set focus to it
@@ -46,6 +64,12 @@ const AccessBar2 = () => {
    * */ 
   useEffect(() => {
     document.addEventListener('keydown', accessBarHandlerKeyDown);
+    const navNodes = document.querySelectorAll('.accessNavLink');
+    const navValues = {};
+    navNodes.forEach(el => {
+      navValues[el.text] = el.pathname;
+    });
+    setNavInfo(navValues);
     return () => document.removeEventListener('keydown', accessBarHandlerKeyDown);
   }, [isHidden]);
 
@@ -66,7 +90,7 @@ const AccessBar2 = () => {
       setSectionInfo(sectionValues);
     }, 500);
     
-  }, []);
+  }, [pathname]);
   
 
 
@@ -84,8 +108,8 @@ const AccessBar2 = () => {
   };
 
   const sectionDropDown = createDropDownValues(sectionInfo);
+  const navInfoDropDown = createDropDownValues(navInfo);
 
-  // render AccessBar if state has changed to hidden
   return (
     <div className ='ally-nav-area' style={ barStyle }>
         <div className = 'dropdown' style={ dropDownStyle }> 
@@ -100,7 +124,19 @@ const AccessBar2 = () => {
             />
           </div>
         </div>
-    </div>
+          <div className = 'dropdown' style={ dropDownStyle }> 
+          <label htmlFor='page-dropdown'> Jump to page: </label>
+          <div id='page-dropdown' >
+            <Dropdown
+              options={ navInfoDropDown }
+              style={ activeComponentDDStyle }
+              placeholder='Other pages on this site'
+              ariaLabel='Navigation Assistant'
+              setSelected={ changeView } 
+            />
+          </div>
+        </div>
+      </div>
   );
 };
 
@@ -111,7 +147,7 @@ const barStyle =  {
   paddingBottom: '.1em',
   paddingLeft: '5em',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
   zIndex: '100',
   position: 'sticky',
   fontSize: '.8em',
@@ -123,6 +159,7 @@ const barStyle =  {
 const dropDownStyle = {
   display: 'flex',
   alignItems: 'center',
+  marginLeft: '1em',
 };
 
 /** Style for Dropdown component **/
@@ -149,4 +186,4 @@ const hiddenH1Styles = {
   fontSize: '0.01px',
 };
 
-export default AccessBarNoRouter;
+export default AccessBarWithRouter;
