@@ -5,10 +5,10 @@
  * *
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import Dropdown from 'react-dropdown-aria';
 
-const AccessBarNoRouter = () => {
+const AccessBar2 = () => {
   const [sectionInfo, setSectionInfo] = useState(null);
   const [isHidden, setIsHidden] = useState(true);
 

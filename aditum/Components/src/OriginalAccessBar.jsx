@@ -29,7 +29,7 @@ import React, { Component } from 'react';
 import Dropdown from 'react-dropdown-aria';
 import { withRouter } from 'react-router'
 
-class OriginalAccessBar extends Component {
+class AccessBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -255,4 +255,4 @@ const hiddenH1Styles = {
   fontSize: '0.01px',
 }
 
-export default withRouter(OriginalAccessBar);
+export default withRouter(AccessBar);
