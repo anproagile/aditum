@@ -221,12 +221,10 @@ const barStyle =  {
   justifyContent: 'flex-start',
   zIndex: '100',
   position: 'sticky',
-  top: '0',
-  width: '100%',
   fontSize: '.8em',
-  backgroundColor: 'lightblue',
-  fontFamily: 'montserrat',
-  color: '#373D3F'
+  backgroundColor: 'gray',
+  fontFamily: 'Roboto',
+  color: 'white'
 };
 
 const dropDownStyle = {

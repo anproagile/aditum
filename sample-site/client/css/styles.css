@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Montserrat;
 }
 
 .currentPageTitle {
@@ -34,39 +33,25 @@
   color: dodgerblue;
 }
 
+img#coffee {
+  height: 95vh;
+}
 
-/** ABOUT PAGE STYLES*/
 #about {
   width: 100vw;
   height: 100vh;
-  text-align: center;
-}
-
-#welcome {
-  margin: 2em;
-  text-align: center;
-}
- 
-#welcome img {
-  width: 80%;
-}
-
-#welcome-content {
-  width: 60%;
-  margin: 1em auto;
-}
-
-.story-mission {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
 }
 
-#ourStory, #ourMission {
-  width: 80%;
-  margin: 1em 2em;
+img#shape {
+  align-self: flex-end;
+  transform: rotate(90deg);
+  height: 35vh;
+  margin-right: 5em;
+  margin-top: 5em;
 }
-
-/**/
 
 .wrapper {
   display: flex;
@@ -84,12 +69,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #2B4570;
-  font-size: 1.2em;
-  color: white;
-}
-
-nav a:visited {
+  background: rgb(73, 79, 82);
   color: white;
 }
 
@@ -177,13 +157,4 @@ nav a:visited {
 #footer li {
   list-style-type: none;
   margin-left: 1.5em;
-}
-
-/* STORE PAGE */
-.productImg {
-  width: 80%;
-}
-
-#Store h1 {
-  text-align: center;
 }
