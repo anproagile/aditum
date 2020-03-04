@@ -29,7 +29,7 @@ import React, { Component } from 'react';
 import Dropdown from 'react-dropdown-aria';
 import { withRouter } from 'react-router'
 
-class AccessBar extends Component {
+class OriginalAccessBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -221,12 +221,10 @@ const barStyle =  {
   justifyContent: 'flex-start',
   zIndex: '100',
   position: 'sticky',
-  top: '0',
-  width: '100%',
   fontSize: '.8em',
-  backgroundColor: 'lightblue',
-  fontFamily: 'montserrat',
-  color: '#373D3F'
+  backgroundColor: 'gray',
+  fontFamily: 'Roboto',
+  color: 'white'
 };
 
 const dropDownStyle = {
@@ -257,4 +255,4 @@ const hiddenH1Styles = {
   fontSize: '0.01px',
 }
 
-export default withRouter(AccessBar);
+export default withRouter(OriginalAccessBar);

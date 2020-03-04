@@ -5,10 +5,10 @@
  * *
  */
 
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Dropdown from 'react-dropdown-aria';
 
-const AccessBar2 = () => {
+const AccessBarNoRouter = () => {
   const [sectionInfo, setSectionInfo] = useState(null);
   const [isHidden, setIsHidden] = useState(true);
 
@@ -111,15 +111,13 @@ const barStyle =  {
   paddingBottom: '.1em',
   paddingLeft: '5em',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
   zIndex: '100',
   position: 'sticky',
-  top: '0',
-  width: '100%',
   fontSize: '.8em',
-  backgroundColor: 'lightblue',
-  fontFamily: 'montserrat',
-  color: '#373D3F'
+  backgroundColor: 'gray',
+  fontFamily: 'Roboto',
+  color: 'white'
 };
 
 const dropDownStyle = {

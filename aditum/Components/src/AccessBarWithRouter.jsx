@@ -8,7 +8,7 @@
  * 
  */
 
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Dropdown from 'react-dropdown-aria';
 import { useHistory} from 'react-router-dom';
 
@@ -150,12 +150,10 @@ const barStyle =  {
   justifyContent: 'flex-start',
   zIndex: '100',
   position: 'sticky',
-  top: '0',
-  width: '100%',
   fontSize: '.8em',
-  backgroundColor: 'lightblue',
-  fontFamily: 'montserrat',
-  color: '#373D3F'
+  backgroundColor: 'gray',
+  fontFamily: 'Roboto',
+  color: 'white'
 };
 
 const dropDownStyle = {
